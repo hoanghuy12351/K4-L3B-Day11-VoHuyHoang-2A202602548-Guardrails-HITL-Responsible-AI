@@ -12,6 +12,7 @@ File JSON luôn ghi vào ``<repo>/outputs/`` (không phụ thuộc thư mục hi
 
 Tham khảo (không chấm, không có CLI): ``src/testing/``, ``src/hitl/``.
 """
+
 from __future__ import annotations
 
 import argparse
@@ -39,6 +40,7 @@ async def part2_guardrails():
         test_topic_filter,
         test_input_plugin,
     )
+
     test_injection_detection()
     print()
     test_topic_filter()
@@ -47,6 +49,7 @@ async def part2_guardrails():
 
     print("\n--- Output Guardrails ---")
     from guardrails.output_guardrails import test_content_filter
+
     test_content_filter()
     print("(LLM-as-Judge / NeMo — optional, skipped)")
 
@@ -157,8 +160,7 @@ async def main(parts=None):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description=(
-            "Lab 11: Guardrails / HITL / Red Team — "
-            "--part khớp Checkpoint (2, 3, 4)"
+            "Lab 11: Guardrails / HITL / Red Team — " "--part khớp Checkpoint (2, 3, 4)"
         )
     )
     parser.add_argument(
